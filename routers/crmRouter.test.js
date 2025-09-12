@@ -1,5 +1,30 @@
-const request =  require('supertest');
-const app  = require('../server');
+
+
+
+
+// tests/githubRoutes.test.js
+const request = require('supertest');
+const app = require('../server'); // Your Express app
+const nock = require('nock');
+
+describe('GET /github/user/:username', () => {
+  beforeEach(() => {
+    nock('https://api.github.com')
+      .get('/users/fang-wenlee')
+      .reply(200, {
+        login: 'fang-wenlee'
+       
+      });
+  });
+
+  it('should return mocked GitHub user data', async () => {
+    const res = await request(app).get('/github/user/fang-wenlee');
+    expect(res.statusCode).toBe(200);
+    expect(res.body).toHaveProperty('login', 'fang-wenlee');
+ 
+  });
+});
+
 
 //  HTTP route testing (express )
 
@@ -31,4 +56,8 @@ describe('POST: validate-claim', ()=>{
    expect(res.body).toHaveProperty('flag')
     })
 })
+
+//Fetch data from external API
+
+
 
