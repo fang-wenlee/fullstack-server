@@ -1,5 +1,5 @@
 
-### Step-by-Step: Setup Node.js + Expres
+### Step-by-Step: Setup Node.js + Express
 1. node -v
    npm -v
 
@@ -17,12 +17,39 @@
 
      server.js
 
-### to start the server
+### How to start the server
 node server 
 
 ### or 
 
 npx nodemon server.js
+
+
+### Fetching data from External API
+
+
+
+
+### Step-by-Step: Install Jest 
+1. npm install --save-dev jest
+  
+2. Add a Test Script to package.json
+
+3. Create a Test file: crmRouter.test.js
+
+4. Run the test
+   npm test
+
+//=========================================================================================
+###  Supertest  is a powerful tool for testing Express routes by simulating HTTP requests—without needing to spin up a real server
+//=========================================================================================
+### Step-by-Step: Use Supertest with Express
+
+1: npm install --save-dev supertest
+
+2: const request = require('supertest');
+
+
 
 
 
