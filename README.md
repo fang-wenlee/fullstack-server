@@ -34,15 +34,20 @@ npx nodemon server.js
 1. npm install --save-dev jest
   
 2. Add a Test Script to package.json
+  "test" : "jest"
 
 3. Create a Test file: crmRouter.test.js
 
-4. Run the test
+4. Run the test:
    npm test
 
-//=========================================================================================
+//============================================================================================================
 ###  Supertest  is a powerful tool for testing Express routes by simulating HTTP requests—without needing to spin up a real server
-//=========================================================================================
+
+### Jest + Supertest + Nock  : to test fetching data from an external API in the backend
+
+
+//============================================================================================================
 ### Step-by-Step: Use Supertest with Express
 
 1: npm install --save-dev supertest
